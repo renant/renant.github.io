@@ -31076,7 +31076,7 @@ r=p.dx
 r.si9(0,q[0])
 r.sfp(0,s[1]-32-q[1]/2+10)
 p.as=r.a[1]
-p.d0=s[0]/2+100}}
+p.d0=s[0]/2}}
 R.K8.prototype={
 $0:function(){var s=this.a
 s.aV=!1
