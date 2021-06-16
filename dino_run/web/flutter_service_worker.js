@@ -4,13 +4,13 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "8599af66a27dec94d00b030ca300dd26",
-"main.dart.js": "b74c111611d6c639b606718860f5daca",
-"index.html": "0778f3ad4a7f646f971a193111fa25a0",
-"/": "0778f3ad4a7f646f971a193111fa25a0",
+"main.dart.js": "e71638aebd1fc486504e5cee59c0ea96",
+"index.html": "4db36353e23e4c9e30db971ef041953e",
+"/": "4db36353e23e4c9e30db971ef041953e",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/AssetManifest.json": "30caace2ef2612563abb2125df2c6ae8",
-"assets/NOTICES": "2021ba9b9433e5acc5b37fee81362ad0",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/NOTICES": "00560466af90967a9f3941a8f5a2023b",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/assets/fonts/Audiowide-Regular.ttf": "e9ee108cd098321ac27b95ebcebfcdf6",
 "assets/assets/images/parallax/plx-4.png": "58662c8e1ed9bd74717dfa54df862788",
 "assets/assets/images/parallax/plx-3.png": "b50ebfb91131365a479f229c0325c033",
@@ -56,7 +56,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
