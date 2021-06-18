@@ -37,7 +37,7 @@ const RESOURCES = {
 "assets/NOTICES": "00560466af90967a9f3941a8f5a2023b",
 "assets/FontManifest.json": "f70195a528059a5162e640c3e1789601",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "1d0ac90adcd8ed73f880987213234e89",
+"main.dart.js": "ea07b24a6c12fb4f5ad7babd6608cc42",
 "index.html": "678a3a9772b1a532f1b8598edce534fc",
 "/": "678a3a9772b1a532f1b8598edce534fc"
 };

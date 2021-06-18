@@ -32546,10 +32546,10 @@ for(s=0;s<5;++s)r.push(new L.mz(s<b?C.na:C.nb,30,C.rW,null))
 return T.Ty(r,C.dc,C.eD)},
 $S:137}
 D.zs.prototype={
-P:function(a,b){var s=null,r=L.fL("Dino Running",A.cS(s,s,C.j,s,s,s,s,s,s,s,s,60,s,s,s,s,!0,s,s,s,s,s,s,s)),q=t.wy,p=A.k2(s,s,new V.ct(C.bB,q),s,s,s,s,s,s,s,s,s,s,s,s,s,s,s)
-p=D.pX(L.fL("Play",A.cS(s,s,s,s,s,s,s,s,s,s,s,30,s,s,s,s,!0,s,s,s,s,s,s,s)),new D.QC(b),p)
+P:function(a,b){var s=null,r=L.fL("Dino Running",A.cS(s,s,C.j,s,s,s,s,s,s,s,s,40,s,s,s,s,!0,s,s,s,s,s,s,s)),q=t.wy,p=A.k2(s,s,new V.ct(C.bB,q),s,s,s,s,s,s,s,s,s,s,s,s,s,s,s)
+p=D.pX(L.fL("Play",A.cS(s,s,s,s,s,s,s,s,s,s,s,20,s,s,s,s,!0,s,s,s,s,s,s,s)),new D.QC(b),p)
 q=A.k2(s,s,new V.ct(C.bB,q),s,s,s,s,s,s,s,s,s,s,s,s,s,s,s)
-return T.py(H.a([r,p,D.pX(L.fL("Settings",A.cS(s,s,s,s,s,s,s,s,s,s,s,30,s,s,s,s,!0,s,s,s,s,s,s,s)),this.c,q)],t.p),C.bb,C.aY)}}
+return T.py(H.a([r,p,D.pX(L.fL("Settings",A.cS(s,s,s,s,s,s,s,s,s,s,s,20,s,s,s,s,!0,s,s,s,s,s,s,s)),this.c,q)],t.p),C.bb,C.aY)}}
 D.QC.prototype={
 $0:function(){K.r7(this.a).vm(V.Qr(new D.QB(),null,t.z))},
 $S:0}
