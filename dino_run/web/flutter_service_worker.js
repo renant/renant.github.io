@@ -7,7 +7,7 @@ const RESOURCES = {
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "version.json": "8599af66a27dec94d00b030ca300dd26",
 "manifest.json": "9203aa3cfc1de89088ea782602223ca3",
-"assets/AssetManifest.json": "1f61406f95bac2e4c783da6be4d564ae",
+"assets/AssetManifest.json": "f21f08a4e68e64b31f3fff869379d7a3",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/assets/fonts/Audiowide-Regular.ttf": "e9ee108cd098321ac27b95ebcebfcdf6",
@@ -35,12 +35,12 @@ const RESOURCES = {
 "assets/assets/images/parallax/plx-2.png": "53d9e937ac94613d7d408fcc50fa67c7",
 "assets/assets/images/parallax/plx-6.png": "b72105ee8703602dae7451e35ca589fa",
 "assets/assets/audio/hurt7.wav": "1d3abcc01a999fc13bbb91e75a15c72c",
-"assets/assets/audio/8Bit%2520Platformer%2520Loop.wav": "f6b03e1f08c979b5ea451635495ab4c3",
+"assets/assets/audio/bgloop.wav": "f6b03e1f08c979b5ea451635495ab4c3",
 "assets/assets/audio/jump14.wav": "117ba1ac434eaba4dc894b0bfe16e42e",
 "assets/NOTICES": "d5075171e620c38f829e49c0cb3407a1",
 "assets/FontManifest.json": "f70195a528059a5162e640c3e1789601",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "99d4709c6c316790369c5d1c6b59e7b9",
+"main.dart.js": "d3b27dfc30177f2bba05db459a323f37",
 "index.html": "678a3a9772b1a532f1b8598edce534fc",
 "/": "678a3a9772b1a532f1b8598edce534fc"
 };

@@ -34721,7 +34721,7 @@ s.d=0
 s.e=!0},
 a3:function(a,b){var s,r,q=this
 q.r.a3(0,b)
-s=C.e.aA(q.giu().r2,350)
+s=C.e.aA(q.giu().r2,250)
 if(q.x<s){q.x=s
 r=q.r
 r.d=0
@@ -34790,7 +34790,7 @@ q.x.v(0,"HudGame")
 l=Q.ank(C.e.i(C.e.bR(q.r2)),new L.uU(new G.nE(P.nx(null,null,t.N,t.dY),t.wB),new L.uV(C.j,"Audiowide-Regular",24,C.k,null)))
 q.r1=l
 q.v(0,l)
-if($.eQ().c.a)L.n8().fH(0,"8Bit Platformer Loop.wav",0.4)
+if($.eQ().c.a)L.n8().fH(0,"bgloop.wav",0.4)
 return P.O(null,r)}})
 return P.P($async$he,r)},
 l4:function(a,b){var s,r,q
