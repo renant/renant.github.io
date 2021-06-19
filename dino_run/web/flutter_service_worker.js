@@ -40,7 +40,7 @@ const RESOURCES = {
 "assets/NOTICES": "d5075171e620c38f829e49c0cb3407a1",
 "assets/FontManifest.json": "f70195a528059a5162e640c3e1789601",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "0d0b3987a4d4d18759278cf0b863dc25",
+"main.dart.js": "99d4709c6c316790369c5d1c6b59e7b9",
 "index.html": "678a3a9772b1a532f1b8598edce534fc",
 "/": "678a3a9772b1a532f1b8598edce534fc"
 };

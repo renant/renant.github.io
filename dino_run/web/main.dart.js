@@ -34803,7 +34803,7 @@ if(s!=null){r=b.a[1]
 q=s.dy.a[1]
 s.dx.shn(0,r-(r+q-20))}},
 qx:function(){var s=this
-if(s.ry){if($.eQ().c.a)L.n8().cJ(0)
+if(!s.ry){if($.eQ().c.a)L.n8().cJ(0)
 s.Ge()
 s.x1=!0
 s.x.v(0,"PauseMenu")}},
