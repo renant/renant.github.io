@@ -6,4 +6,6 @@ body {
 }
 
 .background {
+  background-image: url("./bbq.jpg");
+  background-size: cover;
 }
