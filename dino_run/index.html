@@ -14,19 +14,35 @@
 </head>
 
 <body>
-  <iframe style="width: 100%" src="https://renant.github.io/dino_run/web/#/"></iframe>
-  <div class="text-white mt-0 background w-full h-full">
 
+  <div class="text-white mt-0 background w-full min-h-full">
+    <div class="pb-4 md:pb-12 lg:pb-22 pt-4 md:pt-12 lg:pt-22">
+      <img class="w-14 h-14 md:w-24 md:h-24 rounded-full mx-auto" src="./icon_store.png" alt="" width="512"
+        height="512">
+    </div>
+    <div class="inline sm:hidden ">
+      <iframe style="width: 100%; min-height: 250px;" src="https://renant.github.io/dino_run/web/#/"></iframe>
+    </div>
     <div class="flex flex-col items-center">
-      <div class="marvel-device nexus5 landscape mt-24 w-0 hidden sm:inline">
+      <div class="marvel-device landscape s5 black hidden sm:inline">
         <div class="top-bar"></div>
         <div class="sleep"></div>
-        <div class="volume"></div>
         <div class="camera"></div>
+        <div class="sensor"></div>
+        <div class="speaker"></div>
         <div class="screen">
           <iframe class="h-full w-full border-0" src="https://renant.github.io/dino_run/web/#/"></iframe>
         </div>
+        <div class="home"></div>
       </div>
+
+
+    </div>
+    <div class="flex flex-col items-center md:text-4xl mt-4">
+      <h1 class="font-sans font-light text-center mb-4">You can get a better experience on native app</h1>
+      <a href="https://play.google.com/store/apps/details?id=rteixeira.apps.dino_run">
+        <img class="w-56" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+      </a>
     </div>
   </div>
 </body>
