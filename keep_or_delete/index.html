@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keep or Delete – Teste o app</title>
+    <meta
+      name="description"
+      content="Keep or Delete: organize fotos e vídeos por mês e arraste para manter ou deletar. Página de divulgação para testes."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        line-height: 1.55;
+        background: #0b1418;
+        color: #e8f1f1;
+      }
+      a {
+        color: #7ee2d8;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+        align-items: center;
+        padding: 28px;
+        border-radius: 18px;
+        background: linear-gradient(
+          135deg,
+          rgba(126, 226, 216, 0.18),
+          rgba(34, 197, 94, 0.1),
+          rgba(239, 68, 68, 0.1)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .badge {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 13px;
+        opacity: 0.95;
+      }
+      h1 {
+        margin: 14px 0 10px;
+        font-size: 40px;
+        line-height: 1.15;
+      }
+      .sub {
+        margin: 0 0 18px;
+        font-size: 16px;
+        opacity: 0.9;
+      }
+
+      .ctaRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.08);
+        color: #e8f1f1;
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+      }
+      .btnPrimary {
+        background: rgba(34, 197, 94, 0.2);
+        border-color: rgba(34, 197, 94, 0.35);
+      }
+      .btnDanger {
+        background: rgba(239, 68, 68, 0.18);
+        border-color: rgba(239, 68, 68, 0.35);
+      }
+
+      .phoneMock {
+        border-radius: 22px;
+        padding: 14px;
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .placeholderImg {
+        border-radius: 18px;
+        height: 420px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 18px;
+        background:
+          radial-gradient(
+            60% 60% at 30% 20%,
+            rgba(126, 226, 216, 0.22),
+            transparent 60%
+          ),
+          radial-gradient(
+            60% 60% at 70% 80%,
+            rgba(34, 197, 94, 0.16),
+            transparent 60%
+          ),
+          rgba(255, 255, 255, 0.06);
+        border: 1px dashed rgba(255, 255, 255, 0.25);
+        color: rgba(232, 241, 241, 0.82);
+        font-size: 14px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+        margin-top: 18px;
+      }
+      .card {
+        grid-column: span 6;
+        padding: 18px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .card h2 {
+        margin: 2px 0 8px;
+        font-size: 18px;
+      }
+      .card p {
+        margin: 0;
+        opacity: 0.92;
+      }
+
+      .steps {
+        margin-top: 18px;
+        padding-left: 18px;
+      }
+      .steps li {
+        margin: 8px 0;
+      }
+
+      .shots {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+      }
+      .shot {
+        grid-column: span 4;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .shot .ph {
+        height: 300px;
+        display: grid;
+        place-items: center;
+        padding: 12px;
+        text-align: center;
+        font-size: 13px;
+        color: rgba(232, 241, 241, 0.78);
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+        margin: 12px;
+        border-radius: 12px;
+      }
+      .shot .cap {
+        padding: 0 14px 14px;
+        font-size: 13px;
+        opacity: 0.9;
+      }
+
+      .faq {
+        margin-top: 18px;
+      }
+      details {
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 12px 14px;
+        margin: 10px 0;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+      details p {
+        margin: 10px 0 0;
+        opacity: 0.92;
+      }
+
+      footer {
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        opacity: 0.9;
+        font-size: 13px;
+      }
+      .muted {
+        opacity: 0.78;
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .card {
+          grid-column: span 12;
+        }
+        .shot {
+          grid-column: span 12;
+        }
+        h1 {
+          font-size: 34px;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        body {
+          background: #ffffff;
+          color: #0b1418;
+        }
+        a {
+          color: #0b7a72;
+        }
+        .hero {
+          background: linear-gradient(
+            135deg,
+            rgba(11, 122, 114, 0.1),
+            rgba(34, 197, 94, 0.08),
+            rgba(239, 68, 68, 0.06)
+          );
+          border-color: #e6ebee;
+        }
+        .card,
+        details,
+        .phoneMock {
+          background: #f6f8f9;
+          border-color: #e6ebee;
+        }
+        .btn {
+          background: #ffffff;
+          border-color: #e6ebee;
+          color: #0b1418;
+        }
+        .btnPrimary {
+          background: rgba(34, 197, 94, 0.14);
+          border-color: rgba(34, 197, 94, 0.28);
+        }
+        .btnDanger {
+          background: rgba(239, 68, 68, 0.1);
+          border-color: rgba(239, 68, 68, 0.24);
+        }
+        .placeholderImg {
+          background: #ffffff;
+          border-color: #d7e0e6;
+          color: #29414a;
+        }
+        .shot {
+          background: #ffffff;
+          border-color: #e6ebee;
+        }
+        .shot .ph {
+          border-color: #d7e0e6;
+          color: #29414a;
+        }
+        footer {
+          border-color: #e6ebee;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <div>
+          <span class="badge">🧪 Versão de teste • Android</span>
+          <h1>Keep or Delete</h1>
+          <p class="sub">
+            Limpe sua galeria em minutos: organize por mês e arraste para
+            <strong>manter</strong> ou <strong>deletar</strong>. Sem
+            complicação, sem upload, tudo local no seu celular.
+          </p>
+
+          <div class="ctaRow">
+            <!-- Troque o link abaixo pelo link da Play Store / teste interno / APK -->
+            <a class="btn btnPrimary" href="https://play.google.com/apps/testing/rteixeira.apps.keep_or_delete" target="_blank" rel="noopener"
+              >Baixar / Participar do teste</a
+            >
+            <!-- Troque pelo link do formulário / tópico do fórum -->
+            <a class="btn" href="#feedback">Enviar feedback</a>
+            <a class="btn btnDanger" href="#faq">Dúvidas rápidas</a>
+          </div>
+
+          <p class="muted" style="margin-top: 12px">
+            Recomendação: faça backup antes de usar. A exclusão só acontece após
+            sua confirmação.
+          </p>
+        </div>
+
+        <div class="phoneMock">
+          <img
+            src="images/playstore_01_months.png"
+            alt="Print do app mostrando lista de meses"
+            style="
+              border-radius: 18px;
+              max-width: 100%;
+              height: auto;
+              display: block;
+            "
+          />
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Como funciona">
+        <div class="card">
+          <h2>Como funciona</h2>
+          <ol class="steps">
+            <li>
+              O app lista suas fotos e vídeos e organiza por
+              <strong>mês</strong>.
+            </li>
+            <li>Você escolhe um mês (ex: <em>fevereiro/2026</em>).</li>
+            <li>
+              Arraste para a esquerda para <strong>deletar</strong> ou para a
+              direita para <strong>manter</strong>.
+            </li>
+            <li>
+              No final, você vê um <strong>resumo</strong> e confirma a
+              exclusão.
+            </li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h2>O que eu preciso testar</h2>
+          <p>Quero feedback principalmente sobre:</p>
+          <ul>
+            <li>Velocidade e fluidez do swipe</li>
+            <li>Preview de vídeos</li>
+            <li>Organização por mês (contagens corretas)</li>
+            <li>Fluxo de confirmação e progresso ao deletar</li>
+            <li>Casos de erro (itens que falham ao excluir)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Privacidade</h2>
+          <p>
+            O Keep or Delete não envia fotos ou vídeos para a internet. O
+            processamento acontece localmente no dispositivo. O app só solicita
+            permissões necessárias para listar e, se você confirmar, excluir
+            mídias.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Importante</h2>
+          <p>
+            Em algumas versões do Android, o sistema pode pedir confirmação
+            extra para excluir arquivos. Isso é uma proteção do próprio Android.
+            O app sempre mostra claramente o que será deletado antes de
+            confirmar.
+          </p>
+        </div>
+      </section>
+
+      <section class="shots" aria-label="Capturas de tela">
+        <!-- Substitua cada bloco .ph por <img> quando tiver as imagens -->
+        <div class="shot">
+          <img
+            src="images/playstore_01_months.png"
+            alt="Print do app mostrando lista de meses"
+            style="
+              border-radius: 18px;
+              max-width: 100%;
+              height: auto;
+              display: block;
+            "
+          />
+          <div class="cap">Organização por mês para evitar sobrecarga.</div>
+        </div>
+        <div class="shot">
+          <img
+            src="images/playstore_02_swipe.png"
+            alt="Tela de swipe — esquerda = deletar, direita = manter"
+            style="
+              border-radius: 18px;
+              max-width: 100%;
+              height: auto;
+              display: block;
+            "
+          />
+          <div class="cap">Swipe: esquerda = deletar, direita = manter.</div>
+        </div>
+        <div class="shot">
+          <img
+            src="images/playstore_04_summary.png"
+            alt="Resumo e confirmação — revise antes de excluir"
+            style="
+              border-radius: 18px;
+              max-width: 100%;
+              height: auto;
+              display: block;
+            "
+          />
+          <div class="cap">Revise antes de confirmar a exclusão.</div>
+        </div>
+      </section>
+
+      <section id="feedback" class="card" style="margin-top: 18px">
+        <h2>Como enviar feedback</h2>
+        <p>
+          Poste no tópico do fórum ou envie email para
+          <a href="mailto:renan.replay@gmail.com">renan.replay@gmail.com</a>
+          com:
+        </p>
+        <ul>
+          <li>Seu modelo de celular e versão do Android</li>
+          <li>O que você estava fazendo (mês, tipo de mídia, quantidade)</li>
+          <li>Se travou, ficou lento ou pediu confirmações extras</li>
+          <li>Prints ou vídeo curto (se possível)</li>
+        </ul>
+      </section>
+
+      <section id="faq" class="faq" aria-label="Perguntas frequentes">
+        <h2 style="margin-top: 22px">Perguntas rápidas</h2>
+
+        <details>
+          <summary>O app apaga sem perguntar?</summary>
+          <p>
+            Não. Você marca o que deseja excluir e só apaga após confirmar no
+            resumo final.
+          </p>
+        </details>
+
+        <details>
+          <summary>Por que o Android pede confirmação para deletar?</summary>
+          <p>
+            Em versões recentes, o Android tem proteções extras (Scoped Storage)
+            e pode exigir confirmação adicional para excluir mídias. Isso varia
+            por versão e fabricante.
+          </p>
+        </details>
+
+        <details>
+          <summary>Meus arquivos são enviados para algum servidor?</summary>
+          <p>
+            Não. O app trabalha localmente e não faz upload das suas mídias.
+          </p>
+        </details>
+
+        <details>
+          <summary>Funciona offline?</summary>
+          <p>Sim. O app não depende de internet para revisar fotos e vídeos.</p>
+        </details>
+      </section>
+
+      <footer>
+        <p><strong>Status:</strong> versão de testes (Android)</p>
+      </footer>
+    </div>
+  </body>
+</html>
